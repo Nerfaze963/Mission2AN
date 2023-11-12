@@ -8,22 +8,22 @@ namespace Mission2AN.Models
 {
     public class liaison
     {
-        private int idLaison;
+        private int idLiaison;
         private int secteurId;
         private int portDepartId;
         private int portArriveeId;
         private string duree;
 
-        public liaison(int idLaison, int secteurId, int portDepartId, int portArriveeId, string duree)
+        public liaison(int idLiaison, int secteurId, int portDepartId, int portArriveeId, string duree)
         {
-            this.idLaison = idLaison;
+            this.idLiaison = idLiaison;
             this.secteurId = secteurId;
             this.portDepartId = portDepartId;
             this.portArriveeId = portArriveeId;
             this.duree = duree;
         }
 
-        public int IdLaison { get => idLaison; set => idLaison = value; }
+        public int IdLaison { get => idLiaison; set => idLiaison = value; }
         public int SecteurId { get => secteurId; set => secteurId = value; }
         public int PortDepartId { get => portDepartId; set => portDepartId = value; }
         public int PortArriveeId { get => portArriveeId; set => portArriveeId = value; }
@@ -32,8 +32,7 @@ namespace Mission2AN.Models
         public override string ToString()
         {
 
-            //completer quand classe DAO effectué
-            return();
+            return(this.idLiaison + this.secteurId + this.portDepartId + this.portArriveeId + this.duree);
         }
     }
 }

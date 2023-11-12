@@ -1,10 +1,59 @@
+using Mission2AN.Models;
+using Mission2AN.DAL;
+using Connecte.Controlers;
+
 namespace Mission2AN
 {
     public partial class Form1 : Form
     {
+        Mgr monManager;
+
+        List<secteur> ls = new List<secteur>();
+        List<liaison> ll = new List<liaison>();
+
+
+
         public Form1()
         {
             InitializeComponent();
+
+            monManager = new Mgr();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+
+            ls = monManager.chargementSecBD();
+            ll = monManager.chargementSecBD();
+
+
+            affiche();
+        }
+
+        public void affiche()
+
+        {
+
+
+            try
+            {
+
+
+                listBoxSecteurs.DataSource = null;
+                listBoxSecteurs.DataSource = ls;
+                listBoxSecteurs.DisplayMember = "Description";
+
+
+            }
+
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -18,11 +67,6 @@ namespace Mission2AN
         }
 
         private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
         {
 
         }
@@ -63,6 +107,11 @@ namespace Mission2AN
         }
 
         private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

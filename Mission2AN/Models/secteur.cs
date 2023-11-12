@@ -28,5 +28,11 @@ namespace Mission2AN.Models
         {
             return (this.id + "  " + this.nom);
         }
+
+        // pour afficher la liste par la suite
+        public string Description
+        {
+            get => "Id : " + this.id + " Nom :" + this.nom;
+        }
     }
 }

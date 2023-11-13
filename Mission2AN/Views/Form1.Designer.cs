@@ -29,18 +29,18 @@
         private void InitializeComponent()
         {
             listBoxSecteurs = new ListBox();
-            listBox2 = new ListBox();
+            listBoxLiaisons = new ListBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
             label5 = new Label();
             button1 = new Button();
-            button2 = new Button();
-            button3 = new Button();
+            buttonEditDuree = new Button();
+            buttonSuppLia = new Button();
             label4 = new Label();
             label6 = new Label();
             label7 = new Label();
-            textBox4 = new TextBox();
+            tbDuree = new TextBox();
             textBox5 = new TextBox();
             label8 = new Label();
             label9 = new Label();
@@ -59,14 +59,14 @@
             listBoxSecteurs.TabIndex = 0;
             listBoxSecteurs.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // listBox2
+            // listBoxLiaisons
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(441, 81);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(120, 94);
-            listBox2.TabIndex = 1;
+            listBoxLiaisons.FormattingEnabled = true;
+            listBoxLiaisons.ItemHeight = 15;
+            listBoxLiaisons.Location = new Point(441, 81);
+            listBoxLiaisons.Name = "listBoxLiaisons";
+            listBoxLiaisons.Size = new Size(120, 94);
+            listBoxLiaisons.TabIndex = 1;
             // 
             // label1
             // 
@@ -84,7 +84,7 @@
             label2.Name = "label2";
             label2.Size = new Size(38, 15);
             label2.TabIndex = 7;
-            label2.Text = "label2";
+            label2.Text = "Durée";
             label2.Click += label2_Click;
             // 
             // label3
@@ -114,24 +114,25 @@
             button1.Text = "Ajouter";
             button1.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonEditDuree
             // 
-            button2.Location = new Point(466, 303);
-            button2.Name = "button2";
-            button2.Size = new Size(75, 23);
-            button2.TabIndex = 17;
-            button2.Text = "Modifier";
-            button2.UseVisualStyleBackColor = true;
-            button2.Click += button2_Click;
+            buttonEditDuree.Location = new Point(466, 303);
+            buttonEditDuree.Name = "buttonEditDuree";
+            buttonEditDuree.Size = new Size(75, 23);
+            buttonEditDuree.TabIndex = 17;
+            buttonEditDuree.Text = "Modifier";
+            buttonEditDuree.UseVisualStyleBackColor = true;
+            buttonEditDuree.Click += button2_Click;
             // 
-            // button3
+            // buttonSuppLia
             // 
-            button3.Location = new Point(662, 303);
-            button3.Name = "button3";
-            button3.Size = new Size(75, 23);
-            button3.TabIndex = 18;
-            button3.Text = "Supprimer";
-            button3.UseVisualStyleBackColor = true;
+            buttonSuppLia.Location = new Point(662, 303);
+            buttonSuppLia.Name = "buttonSuppLia";
+            buttonSuppLia.Size = new Size(75, 23);
+            buttonSuppLia.TabIndex = 18;
+            buttonSuppLia.Text = "Supprimer";
+            buttonSuppLia.UseVisualStyleBackColor = true;
+            buttonSuppLia.Click += buttonSuppLia_Click;
             // 
             // label4
             // 
@@ -163,13 +164,13 @@
             label7.Text = "SUPPRIMER LIAISON";
             label7.Click += label7_Click;
             // 
-            // textBox4
+            // tbDuree
             // 
-            textBox4.Location = new Point(448, 261);
-            textBox4.Name = "textBox4";
-            textBox4.Size = new Size(100, 23);
-            textBox4.TabIndex = 22;
-            textBox4.TextChanged += textBox4_TextChanged_1;
+            tbDuree.Location = new Point(448, 261);
+            tbDuree.Name = "tbDuree";
+            tbDuree.Size = new Size(100, 23);
+            tbDuree.TabIndex = 22;
+            tbDuree.TextChanged += textBox4_TextChanged_1;
             // 
             // textBox5
             // 
@@ -234,18 +235,18 @@
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(textBox5);
-            Controls.Add(textBox4);
+            Controls.Add(tbDuree);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label4);
-            Controls.Add(button3);
-            Controls.Add(button2);
+            Controls.Add(buttonSuppLia);
+            Controls.Add(buttonEditDuree);
             Controls.Add(button1);
             Controls.Add(label5);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(listBox2);
+            Controls.Add(listBoxLiaisons);
             Controls.Add(listBoxSecteurs);
             Name = "Form1";
             Text = "Form1";
@@ -257,18 +258,18 @@
         #endregion
 
         private ListBox listBoxSecteurs;
-        private ListBox listBox2;
+        private ListBox listBoxLiaisons;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label5;
         private Button button1;
-        private Button button2;
-        private Button button3;
+        private Button buttonEditDuree;
+        private Button buttonSuppLia;
         private Label label4;
         private Label label6;
         private Label label7;
-        private TextBox textBox4;
+        private TextBox tbDuree;
         private TextBox textBox5;
         private Label label8;
         private Label label9;

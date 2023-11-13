@@ -9,6 +9,8 @@ namespace Mission2AN
         Mgr monManager;
 
         List<secteur> ls = new List<secteur>();
+        List<liaison> ll = new List<liaison>();
+
 
 
         public Form1()
@@ -23,6 +25,7 @@ namespace Mission2AN
 
 
             ls = monManager.chargementSecBD();
+            ll = monManager.chargementLiaBD();
 
             affiche();
         }
@@ -39,7 +42,9 @@ namespace Mission2AN
                 listBoxSecteurs.DataSource = null;
                 listBoxSecteurs.DataSource = ls;
                 listBoxSecteurs.DisplayMember = "Description";
-
+                listBoxLiaisons.DataSource = null;
+                listBoxLiaisons.DataSource = ll;
+                listBoxLiaisons.DisplayMember = "Description2";
 
             }
 
@@ -69,7 +74,35 @@ namespace Mission2AN
 
         private void button2_Click(object sender, EventArgs e)
         {
+            try
+            {
+                // Récuperer l'indice de la liaison selectionnée dans la listBox
+                /* int i = listBoxLiaisons.SelectedIndex;
+                 * 
+                 * Récupérer la liaison selectionnée à partir de la collection "ll"
+                 * liaison emp = ll[i];
+                 */
 
+                // Récupérer directement l'employé selectionné
+
+                liaison emp = (liaison)listBoxLiaisons.SelectedItem;
+
+                emp.Duree = TimeSpan.Parse(tbDuree.Text);
+
+                monManager.updateLiaison(emp);
+
+                ll = monManager.chargementLiaBD();
+
+
+                affiche();
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
 
         private void label7_Click(object sender, EventArgs e)
@@ -110,6 +143,36 @@ namespace Mission2AN
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonSuppLia_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Récuperer l'indice de la liaison selectionnée dans la listBox
+                /* int i = listBoxLiaisons.SelectedIndex;
+                 * 
+                 * Récupérer la liaison selectionnée à partir de la collection "ll"
+                 * liaison emp = ll[i];
+                 */
+
+                // Récupérer directement l'employé selectionné
+
+                liaison emp = (liaison)listBoxLiaisons.SelectedItem;
+
+                monManager.deleteLiaison(emp);
+
+                ll = monManager.chargementLiaBD();
+
+                affiche();
+
+            }
+
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+
+            }
         }
     }
 }

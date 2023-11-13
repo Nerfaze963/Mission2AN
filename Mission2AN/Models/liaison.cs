@@ -12,9 +12,9 @@ namespace Mission2AN.Models
         private int secteurId;
         private int portDepartId;
         private int portArriveeId;
-        private string duree;
+        private TimeSpan duree;
 
-        public liaison(int idLiaison, int secteurId, int portDepartId, int portArriveeId, string duree)
+        public liaison(int idLiaison, int secteurId, int portDepartId, int portArriveeId, TimeSpan duree)
         {
             this.idLiaison = idLiaison;
             this.secteurId = secteurId;
@@ -23,16 +23,20 @@ namespace Mission2AN.Models
             this.duree = duree;
         }
 
-        public int IdLaison { get => idLiaison; set => idLiaison = value; }
+        public int IdLiaison { get => idLiaison; set => idLiaison = value; }
         public int SecteurId { get => secteurId; set => secteurId = value; }
         public int PortDepartId { get => portDepartId; set => portDepartId = value; }
         public int PortArriveeId { get => portArriveeId; set => portArriveeId = value; }
-        public string Duree { get => duree; set => duree = value; }
+        public TimeSpan Duree { get => duree; set => duree = value; }
 
         public override string ToString()
         {
 
-            return(this.idLiaison + this.secteurId + this.portDepartId + this.portArriveeId + this.duree);
+            return(this.idLiaison + "" + this.secteurId + "" + this.portDepartId + "" + this.portArriveeId + "" + this.duree);
+        }
+        public string Description2
+        {
+            get => "Id : " +this.idLiaison + "Durée : "+this.Duree ;
         }
     }
 }

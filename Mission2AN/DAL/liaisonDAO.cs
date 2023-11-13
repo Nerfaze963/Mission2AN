@@ -53,14 +53,14 @@ namespace Mission2AN.DAL
                 {
 
 
-                    int idLaison = Int32.Parse(reader.GetValue(0).ToString());
-                    int secteurId = (int)reader.GetValue(1);
-                    int portDepartId = (int)reader.GetValue(2);
-                    int portArriveeId = (int)reader.GetValue(3);
-                    string duree = (string)reader.GetValue(4);
+                    int idLiaison = Int32.Parse(reader.GetValue(0).ToString());
+                    int secteurId = Int32.Parse(reader.GetValue(1).ToString());
+                    int portDepartId = Int32.Parse(reader.GetValue(2).ToString());
+                    int portArriveeId = Int32.Parse(reader.GetValue(3).ToString());
+                    TimeSpan duree = (TimeSpan)reader.GetValue(4);
 
 
-                    l = new liaison(idLaison, secteurId, portDepartId, portArriveeId, duree);
+                    l = new liaison(idLiaison, secteurId, portDepartId, portArriveeId, duree);
 
 
                     ll.Add(l);

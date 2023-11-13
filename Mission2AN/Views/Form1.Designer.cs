@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             listBoxSecteurs = new ListBox();
-            listBox2 = new ListBox();
+            listBoxLiaisons = new ListBox();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
@@ -59,14 +59,14 @@
             listBoxSecteurs.TabIndex = 0;
             listBoxSecteurs.SelectedIndexChanged += listBox1_SelectedIndexChanged;
             // 
-            // listBox2
+            // listBoxLiaisons
             // 
-            listBox2.FormattingEnabled = true;
-            listBox2.ItemHeight = 15;
-            listBox2.Location = new Point(441, 81);
-            listBox2.Name = "listBox2";
-            listBox2.Size = new Size(120, 94);
-            listBox2.TabIndex = 1;
+            listBoxLiaisons.FormattingEnabled = true;
+            listBoxLiaisons.ItemHeight = 15;
+            listBoxLiaisons.Location = new Point(441, 81);
+            listBoxLiaisons.Name = "listBoxLiaisons";
+            listBoxLiaisons.Size = new Size(120, 94);
+            listBoxLiaisons.TabIndex = 1;
             // 
             // label1
             // 
@@ -245,7 +245,7 @@
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(listBox2);
+            Controls.Add(listBoxLiaisons);
             Controls.Add(listBoxSecteurs);
             Name = "Form1";
             Text = "Form1";
@@ -257,7 +257,7 @@
         #endregion
 
         private ListBox listBoxSecteurs;
-        private ListBox listBox2;
+        private ListBox listBoxLiaisons;
         private Label label1;
         private Label label2;
         private Label label3;

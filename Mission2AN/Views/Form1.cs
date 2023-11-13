@@ -13,6 +13,7 @@ namespace Mission2AN
 
 
 
+
         public Form1()
         {
             InitializeComponent();
@@ -25,7 +26,8 @@ namespace Mission2AN
 
 
             ls = monManager.chargementSecBD();
-            ll = monManager.chargementSecBD();
+            ll = monManager.chargementLiaBD();
+
 
 
             affiche();
@@ -43,7 +45,9 @@ namespace Mission2AN
                 listBoxSecteurs.DataSource = null;
                 listBoxSecteurs.DataSource = ls;
                 listBoxSecteurs.DisplayMember = "Description";
-
+                listBoxLiaisons.DataSource = null;
+                listBoxLiaisons.DataSource = ll;
+                listBoxLiaisons.DisplayMember = "Description2";
 
             }
 

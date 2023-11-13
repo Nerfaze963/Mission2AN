@@ -14,14 +14,16 @@ namespace Connecte.Controlers
     {
 
         secteurDAO secDAO = new secteurDAO();
+        liaisonDAO liaDAO = new liaisonDAO();
         List<secteur> maListeSecteur;
-
+        List<liaison> maListeLiaison;
         public Mgr()
         {
 
             maListeSecteur = new List<secteur>();
+            maListeLiaison = new List<liaison>();
         }
-
+     
 
 
         // Récupération de la liste des secteurs à partir du DAL
@@ -32,7 +34,13 @@ namespace Connecte.Controlers
 
             return (maListeSecteur);
         }
+        public List<liaison> chargementLiaBD()
+        {
 
+            maListeLiaison = liaisonDAO.GetLiaison();
+
+            return (maListeLiaison);
+        }
 
     }
 }

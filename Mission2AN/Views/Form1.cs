@@ -9,8 +9,6 @@ namespace Mission2AN
         Mgr monManager;
 
         List<secteur> ls = new List<secteur>();
-        List<liaison> ll = new List<liaison>();
-
 
 
         public Form1()
@@ -25,8 +23,6 @@ namespace Mission2AN
 
 
             ls = monManager.chargementSecBD();
-            ll = monManager.chargementSecBD();
-
 
             affiche();
         }

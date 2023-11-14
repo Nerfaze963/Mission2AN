@@ -46,10 +46,17 @@ namespace Connecte.Controlers
             return (maListeLiaison);
         }
         // Récupération de la liste des ports à partir du DAL
-        public List<port> chargementPortBD()
+        public List<port> chargementPortArriveeBD()
         {
 
             maListePort = portDAO.GetPortArrivee();
+
+            return (maListePort);
+        }
+        public List<port> chargementPortDepartBD()
+        {
+
+            maListePort = portDAO.GetPortDepart();
 
             return (maListePort);
         }

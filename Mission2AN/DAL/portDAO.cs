@@ -39,9 +39,9 @@ namespace Mission2AN.DAL
 
                 maConnexionSql.openConnection();
 
-                com = maConnexionSql.reqExec("SELECT * FROM port WHERE id IN (2, 3, 4, 7, 8, 9, 10);s");
+                com = maConnexionSql.reqExec("SELECT * FROM port WHERE id IN (2, 3, 4, 7, 8, 9, 10);");
 
-
+                    
 
                 MySqlDataReader reader = com.ExecuteReader();
 
@@ -86,6 +86,69 @@ namespace Mission2AN.DAL
             }
 
             return lp;
+
+        }
+
+
+        public static List<port> GetPortDepart()
+        {
+            List<port> lp2 = new List<port>();
+
+            try
+            {
+
+                maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
+
+
+                maConnexionSql.openConnection();
+
+                com = maConnexionSql.reqExec("SELECT * FROM port WHERE id IN (1,5,6,11);");
+
+
+
+                MySqlDataReader reader = com.ExecuteReader();
+
+
+                port p;
+
+
+                while (reader.Read())
+                {
+
+
+                    int id = Int32.Parse(reader.GetValue(0).ToString());
+                    string nom = (string)reader.GetValue(1);
+
+
+                    p = new port(id, nom);
+
+
+                    lp2.Add(p);
+
+
+                }
+
+
+                reader.Close();
+
+
+                maConnexionSql.closeConnection();
+
+
+
+
+
+
+            }
+
+            catch (Exception emp)
+            {
+
+                throw emp;
+
+            }
+
+            return lp2;
 
         }
     }

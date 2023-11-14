@@ -57,7 +57,7 @@
             listBoxSecteurs.Name = "listBoxSecteurs";
             listBoxSecteurs.Size = new Size(120, 94);
             listBoxSecteurs.TabIndex = 0;
-            listBoxSecteurs.SelectedIndexChanged += listBox1_SelectedIndexChanged;
+           
             // 
             // listBoxLiaisons
             // 
@@ -142,7 +142,7 @@
             label4.Size = new Size(103, 15);
             label4.TabIndex = 19;
             label4.Text = "AJOUTER LIAISON";
-            label4.Click += label4_Click;
+            
             // 
             // label6
             // 
@@ -152,7 +152,7 @@
             label6.Size = new Size(107, 15);
             label6.TabIndex = 20;
             label6.Text = "MODIFIER LIAISON";
-            label6.Click += label6_Click;
+            
             // 
             // label7
             // 
@@ -162,7 +162,7 @@
             label7.Size = new Size(116, 15);
             label7.TabIndex = 21;
             label7.Text = "SUPPRIMER LIAISON";
-            label7.Click += label7_Click;
+            
             // 
             // tbDuree
             // 
@@ -170,7 +170,7 @@
             tbDuree.Name = "tbDuree";
             tbDuree.Size = new Size(100, 23);
             tbDuree.TabIndex = 22;
-            tbDuree.TextChanged += textBox4_TextChanged_1;
+            
             // 
             // textBox5
             // 
@@ -187,7 +187,7 @@
             label8.Size = new Size(77, 15);
             label8.TabIndex = 24;
             label8.Text = "Liste secteurs";
-            label8.Click += label8_Click;
+            
             // 
             // label9
             // 
@@ -222,7 +222,7 @@
             label10.Size = new Size(69, 15);
             label10.TabIndex = 28;
             label10.Text = "SICILYLINES";
-            label10.Click += label10_Click;
+            
             // 
             // Form1
             // 

@@ -10,7 +10,9 @@ namespace Mission2AN
 
         List<secteur> ls = new List<secteur>();
         List<liaison> ll = new List<liaison>();
-        List<port> lp = new List<port>();
+        List<port> lpa = new List<port>();
+        List<port> lpd = new List<port>();
+
 
 
 
@@ -27,7 +29,8 @@ namespace Mission2AN
 
             ls = monManager.chargementSecBD();
             ll = monManager.chargementLiaBD();
-            lp = monManager.chargementPortBD();
+            lpd = monManager.chargementPortDepartBD();
+            lpa = monManager.chargementPortArriveeBD();
 
             affiche();
         }
@@ -44,12 +47,18 @@ namespace Mission2AN
                 listBoxSecteurs.DataSource = null;
                 listBoxSecteurs.DataSource = ls;
                 listBoxSecteurs.DisplayMember = "Description";
+
                 listBoxLiaisons.DataSource = null;
                 listBoxLiaisons.DataSource = ll;
                 listBoxLiaisons.DisplayMember = "Description2";
+
                 comboBoxPort1.DataSource = null;
-                comboBoxPort1.DataSource = lp;
+                comboBoxPort1.DataSource = lpa;
                 comboBoxPort1.DisplayMember = "affichePort";
+
+                comboBoxPort2.DataSource = null;
+                comboBoxPort2.DataSource = lpd;
+                comboBoxPort2.DisplayMember = "affichePort";
 
             }
 
@@ -110,45 +119,7 @@ namespace Mission2AN
             }
         }
 
-        private void label7_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox4_TextChanged_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+       
 
         private void buttonSuppLia_Click(object sender, EventArgs e)
         {

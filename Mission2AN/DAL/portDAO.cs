@@ -27,9 +27,9 @@ namespace Mission2AN.DAL
         private static MySqlCommand com;
 
 
-        public static List<port> GetPort()
+        public static List<port> GetPortArrivee()
         {
-            List<port> lc = new List<port>();
+            List<port> lp = new List<port>();
 
             try
             {
@@ -39,7 +39,7 @@ namespace Mission2AN.DAL
 
                 maConnexionSql.openConnection();
 
-                com = maConnexionSql.reqExec("Select * from port");
+                com = maConnexionSql.reqExec("SELECT * FROM port WHERE id IN (2, 3, 4, 7, 8, 9, 10);s");
 
 
 
@@ -53,14 +53,14 @@ namespace Mission2AN.DAL
                 {
 
 
-                    int id = (int)reader.GetValue(0);
+                    int id = Int32.Parse(reader.GetValue(0).ToString());
                     string nom = (string)reader.GetValue(1);
 
 
                     p = new port(id, nom);
 
 
-                    lc.Add(p);
+                    lp.Add(p);
 
 
                 }
@@ -85,7 +85,7 @@ namespace Mission2AN.DAL
 
             }
 
-            return lc;
+            return lp;
 
         }
     }

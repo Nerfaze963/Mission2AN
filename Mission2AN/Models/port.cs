@@ -20,7 +20,7 @@ namespace Mission2AN.Models
         public int Id { get => id; set => id = value; }
         public string Nom { get => nom; set => nom = value; }
 
-        public string afficheSecteur
+        public string affichePort
         {
             get => this.nom;
         }

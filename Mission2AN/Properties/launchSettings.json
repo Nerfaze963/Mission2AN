@@ -2,7 +2,7 @@
   "profiles": {
     "Mission2AN": {
       "commandName": "Project",
-      "workingDirectory": "C:\\Users\\arthu\\source\\Repos\\Mission2AN\\Mission2AN\\bin\\Debug\\net6.0-windows"
+      "workingDirectory": "C:\\Users\\noahg\\source\\repos\\Mission2AN"
     }
   }
 }

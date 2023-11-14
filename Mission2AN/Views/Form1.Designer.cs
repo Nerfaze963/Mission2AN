@@ -44,8 +44,8 @@
             textBox5 = new TextBox();
             label8 = new Label();
             label9 = new Label();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
+            comboBoxPort1 = new ComboBox();
+            comboBoxPort2 = new ComboBox();
             label10 = new Label();
             SuspendLayout();
             // 
@@ -198,21 +198,21 @@
             label9.TabIndex = 25;
             label9.Text = "Liste liaisons";
             // 
-            // comboBox1
+            // comboBoxPort1
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(174, 264);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 26;
+            comboBoxPort1.FormattingEnabled = true;
+            comboBoxPort1.Location = new Point(174, 264);
+            comboBoxPort1.Name = "comboBoxPort1";
+            comboBoxPort1.Size = new Size(121, 23);
+            comboBoxPort1.TabIndex = 26;
             // 
-            // comboBox2
+            // comboBoxPort2
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(174, 319);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 27;
+            comboBoxPort2.FormattingEnabled = true;
+            comboBoxPort2.Location = new Point(174, 319);
+            comboBoxPort2.Name = "comboBoxPort2";
+            comboBoxPort2.Size = new Size(121, 23);
+            comboBoxPort2.TabIndex = 27;
             // 
             // label10
             // 
@@ -230,8 +230,8 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(label10);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(comboBoxPort2);
+            Controls.Add(comboBoxPort1);
             Controls.Add(label9);
             Controls.Add(label8);
             Controls.Add(textBox5);
@@ -273,8 +273,8 @@
         private TextBox textBox5;
         private Label label8;
         private Label label9;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
+        private ComboBox comboBoxPort1;
+        private ComboBox comboBoxPort2;
         private Label label10;
     }
 }

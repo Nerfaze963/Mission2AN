@@ -162,5 +162,34 @@ namespace Mission2AN.DAL
 
 
         }
+
+        //Ajout d'une liaison
+
+        public static void ajoutLiaison(liaison e)
+        {
+            try
+            {
+
+                maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
+
+
+              //  maConnexionSql.openConnection(e);
+                com = maConnexionSql.reqExec("insert into liaison" + e.IdLiaison);
+
+
+                int i = com.ExecuteNonQuery();
+
+
+
+                maConnexionSql.closeConnection();
+
+
+            }
+            catch (Exception emp)
+            {
+
+                throw (emp);
+            }
+        }
     }
 }

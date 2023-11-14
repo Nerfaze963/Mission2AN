@@ -15,13 +15,16 @@ namespace Connecte.Controlers
 
         secteurDAO secDAO = new secteurDAO();
         liaisonDAO liaDAO = new liaisonDAO();
+        portDAO portDAO = new portDAO();
         List<secteur> maListeSecteur;
         List<liaison> maListeLiaison;
+        List<port> maListePort;
         public Mgr()
         {
 
             maListeSecteur = new List<secteur>();
             maListeLiaison = new List<liaison>();
+            maListePort = new List<port>();
         }
      
 
@@ -34,12 +37,21 @@ namespace Connecte.Controlers
 
             return (maListeSecteur);
         }
+        // Récupération de la liste des liaisons à partir du DAL
         public List<liaison> chargementLiaBD()
         {
 
             maListeLiaison = liaisonDAO.GetLiaison();
 
             return (maListeLiaison);
+        }
+        // Récupération de la liste des ports à partir du DAL
+        public List<port> chargementPortBD()
+        {
+
+            maListePort = portDAO.GetPortArrivee();
+
+            return (maListePort);
         }
 
         // Suppression d'une liaison dans le DAL
@@ -52,6 +64,11 @@ namespace Connecte.Controlers
         public void updateLiaison(liaison e)
         {
             liaisonDAO.updateLiaison(e);
+        }
+
+        public void ajoutLiaison(liaison e)
+        {
+            liaisonDAO.ajoutLiaison(e);
         }
 
     }

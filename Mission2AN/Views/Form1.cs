@@ -10,6 +10,7 @@ namespace Mission2AN
 
         List<secteur> ls = new List<secteur>();
         List<liaison> ll = new List<liaison>();
+        List<port> lp = new List<port>();
 
 
 
@@ -26,6 +27,7 @@ namespace Mission2AN
 
             ls = monManager.chargementSecBD();
             ll = monManager.chargementLiaBD();
+            lp = monManager.chargementPortBD();
 
             affiche();
         }
@@ -45,6 +47,9 @@ namespace Mission2AN
                 listBoxLiaisons.DataSource = null;
                 listBoxLiaisons.DataSource = ll;
                 listBoxLiaisons.DisplayMember = "Description2";
+                comboBoxPort1.DataSource = null;
+                comboBoxPort1.DataSource = lp;
+                comboBoxPort1.DisplayMember = "affichePort";
 
             }
 

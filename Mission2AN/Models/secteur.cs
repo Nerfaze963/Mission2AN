@@ -8,8 +8,8 @@ namespace Mission2AN.Models
 {
     public class secteur
     {
-        private int id;
-        private string nom;
+        protected int id;
+        protected string nom;
 
         public secteur(int id, string nom)
         {

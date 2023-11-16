@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +8,8 @@ namespace Mission2AN.Models
 {
     public class port
     {
-        private int id;
-        private string nom;
+        protected int id;
+        protected string nom;
 
         public port(int id, string nom)
         {

@@ -41,7 +41,7 @@
             label6 = new Label();
             label7 = new Label();
             tbDuree = new TextBox();
-            textBox5 = new TextBox();
+            tdAddDuree = new TextBox();
             label8 = new Label();
             label9 = new Label();
             comboBoxPort1 = new ComboBox();
@@ -57,7 +57,7 @@
             listBoxSecteurs.Name = "listBoxSecteurs";
             listBoxSecteurs.Size = new Size(120, 94);
             listBoxSecteurs.TabIndex = 0;
-           
+            listBoxSecteurs.SelectedIndexChanged += listBoxSecteurs_SelectedIndexChanged;
             // 
             // listBoxLiaisons
             // 
@@ -65,7 +65,7 @@
             listBoxLiaisons.ItemHeight = 15;
             listBoxLiaisons.Location = new Point(441, 81);
             listBoxLiaisons.Name = "listBoxLiaisons";
-            listBoxLiaisons.Size = new Size(120, 94);
+            listBoxLiaisons.Size = new Size(220, 94);
             listBoxLiaisons.TabIndex = 1;
             // 
             // label1
@@ -103,7 +103,7 @@
             label5.Name = "label5";
             label5.Size = new Size(38, 15);
             label5.TabIndex = 14;
-            label5.Text = "label5";
+            label5.Text = "Durée";
             // 
             // button1
             // 
@@ -113,6 +113,7 @@
             button1.TabIndex = 16;
             button1.Text = "Ajouter";
             button1.UseVisualStyleBackColor = true;
+            button1.Click += button1_Click;
             // 
             // buttonEditDuree
             // 
@@ -126,12 +127,15 @@
             // 
             // buttonSuppLia
             // 
+            buttonSuppLia.BackColor = Color.White;
+            buttonSuppLia.Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            buttonSuppLia.ForeColor = Color.Black;
             buttonSuppLia.Location = new Point(662, 303);
             buttonSuppLia.Name = "buttonSuppLia";
             buttonSuppLia.Size = new Size(75, 23);
             buttonSuppLia.TabIndex = 18;
             buttonSuppLia.Text = "Supprimer";
-            buttonSuppLia.UseVisualStyleBackColor = true;
+            buttonSuppLia.UseVisualStyleBackColor = false;
             buttonSuppLia.Click += buttonSuppLia_Click;
             // 
             // label4
@@ -142,7 +146,6 @@
             label4.Size = new Size(103, 15);
             label4.TabIndex = 19;
             label4.Text = "AJOUTER LIAISON";
-            
             // 
             // label6
             // 
@@ -152,7 +155,6 @@
             label6.Size = new Size(107, 15);
             label6.TabIndex = 20;
             label6.Text = "MODIFIER LIAISON";
-            
             // 
             // label7
             // 
@@ -162,7 +164,6 @@
             label7.Size = new Size(116, 15);
             label7.TabIndex = 21;
             label7.Text = "SUPPRIMER LIAISON";
-            
             // 
             // tbDuree
             // 
@@ -170,31 +171,32 @@
             tbDuree.Name = "tbDuree";
             tbDuree.Size = new Size(100, 23);
             tbDuree.TabIndex = 22;
-            
+            tbDuree.TextChanged += tbDuree_TextChanged;
             // 
-            // textBox5
+            // tdAddDuree
             // 
-            textBox5.Location = new Point(175, 373);
-            textBox5.Name = "textBox5";
-            textBox5.Size = new Size(100, 23);
-            textBox5.TabIndex = 23;
+            tdAddDuree.Location = new Point(175, 373);
+            tdAddDuree.Name = "tdAddDuree";
+            tdAddDuree.Size = new Size(100, 23);
+            tdAddDuree.TabIndex = 23;
             // 
             // label8
             // 
             label8.AutoSize = true;
+            label8.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
             label8.Location = new Point(198, 52);
             label8.Name = "label8";
-            label8.Size = new Size(77, 15);
+            label8.Size = new Size(106, 17);
             label8.TabIndex = 24;
             label8.Text = "Liste secteurs";
-            
             // 
             // label9
             // 
             label9.AutoSize = true;
-            label9.Location = new Point(466, 52);
+            label9.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
+            label9.Location = new Point(466, 50);
             label9.Name = "label9";
-            label9.Size = new Size(73, 15);
+            label9.Size = new Size(100, 17);
             label9.TabIndex = 25;
             label9.Text = "Liste liaisons";
             // 
@@ -217,12 +219,12 @@
             // label10
             // 
             label10.AutoSize = true;
-            label10.Location = new Point(337, 18);
+            label10.Font = new Font("Arial Black", 14.25F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.Location = new Point(310, 18);
             label10.Name = "label10";
-            label10.Size = new Size(69, 15);
+            label10.Size = new Size(146, 27);
             label10.TabIndex = 28;
             label10.Text = "SICILYLINES";
-            
             // 
             // Form1
             // 
@@ -234,7 +236,7 @@
             Controls.Add(comboBoxPort1);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(textBox5);
+            Controls.Add(tdAddDuree);
             Controls.Add(tbDuree);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -270,7 +272,7 @@
         private Label label6;
         private Label label7;
         private TextBox tbDuree;
-        private TextBox textBox5;
+        private TextBox tdAddDuree;
         private Label label8;
         private Label label9;
         private ComboBox comboBoxPort1;

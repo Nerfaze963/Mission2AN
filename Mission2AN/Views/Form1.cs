@@ -16,6 +16,7 @@ namespace Mission2AN
 
 
 
+
         public Form1()
         {
             InitializeComponent();
@@ -71,11 +72,6 @@ namespace Mission2AN
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void textBox3_TextChanged(object sender, EventArgs e)
         {
 
@@ -119,7 +115,7 @@ namespace Mission2AN
             }
         }
 
-       
+
 
         private void buttonSuppLia_Click(object sender, EventArgs e)
         {
@@ -149,6 +145,48 @@ namespace Mission2AN
                 MessageBox.Show(ex.Message);
 
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            secteur secteur = listBoxSecteurs.SelectedItem as secteur;
+
+            // initier les valeur pour la creation de l'objet
+            string add_duree = tdAddDuree.Text;
+            port add_depart = comboBoxPort2.SelectedItem as port;
+            port add_arrivee = comboBoxPort1.SelectedItem as port;
+
+            liaisonDAO.ajoutLiaison(add_duree, add_depart.Id, add_arrivee.Id, secteur.Id);
+
+            listBoxLiaisons.DataSource = null;
+            listBoxLiaisons.DataSource = liaisonDAO.GetLiaison(secteur.Id);
+        }
+        public void afficheLiaisonSecteur()
+        {
+            try
+            {
+                listBoxLiaisons.DataSource = null;
+                listBoxLiaisons.DataSource = ll;
+                listBoxLiaisons.DisplayMember = "Description";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void listBoxSecteurs_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            secteur sec = (secteur)listBoxSecteurs.SelectedItem;
+            ll = monManager.chargementLiaisonSecteur(sec);
+            afficheLiaisonSecteur();
+
+
+        }
+
+        private void tbDuree_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

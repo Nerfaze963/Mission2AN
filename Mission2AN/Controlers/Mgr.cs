@@ -78,5 +78,13 @@ namespace Connecte.Controlers
             liaisonDAO.ajoutLiaison(e);
         }
 
+
+        public List<liaison> chargementLiaisonSecteur(secteur sec)
+        {
+
+            maListeLiaison = liaisonDAO.GetLiaisonSecteur(sec);
+
+            return (maListeLiaison);       
+        }
     }
 }

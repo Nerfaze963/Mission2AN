@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mission2AN.DAL;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,11 +9,11 @@ namespace Mission2AN.Models
 {
     public class liaison
     {
-        private int idLiaison;
-        private int secteurId;
-        private int portDepartId;
-        private int portArriveeId;
-        private TimeSpan duree;
+        protected int idLiaison;
+        protected int secteurId;
+        protected int portDepartId;
+        protected int portArriveeId;
+        protected TimeSpan duree;
 
         public liaison(int idLiaison, int secteurId, int portDepartId, int portArriveeId, TimeSpan duree)
         {
@@ -31,12 +32,24 @@ namespace Mission2AN.Models
 
         public override string ToString()
         {
+            
+            string nomDepart = portDAO.GetPortArrivee()[this.portArriveeId - 1].affichePort;
+           
+            string nomArrive = portDAO.GetPortArrivee()[this.portDepartId - 1].affichePort;
 
-            return(this.idLiaison + "" + this.secteurId + "" + this.portDepartId + "" + this.portArriveeId + "" + this.duree);
+            
+            return nomArrive + " ; " + this.duree + " ; " + nomDepart;
+
+
+
+            //return (this.idLiaison + "" + this.secteurId + "" + this.portDepartId + "" + this.portArriveeId + "" + this.duree);
         }
+        
+        
+        /*
         public string Description2
         {
-            get => "Id : " +this.idLiaison + "Durée : "+this.Duree ;
-        }
+            get => "Id : " +this.idLiaison +"Départ : "+ "Arrivee :"+this.portArriveeId+ "Durée : "+this.Duree ;
+        }*/
     }
 }

@@ -39,7 +39,7 @@ namespace Mission2AN.DAL
 
                 maConnexionSql.openConnection();
 
-                com = maConnexionSql.reqExec("SELECT * FROM port WHERE id IN (2, 3, 4, 7, 8, 9, 10);");
+                com = maConnexionSql.reqExec("SELECT * FROM port;");
 
                     
 
@@ -102,7 +102,7 @@ namespace Mission2AN.DAL
 
                 maConnexionSql.openConnection();
 
-                com = maConnexionSql.reqExec("SELECT * FROM port WHERE id IN (1,5,6,11);");
+                com = maConnexionSql.reqExec("SELECT * FROM port;");
 
 
 

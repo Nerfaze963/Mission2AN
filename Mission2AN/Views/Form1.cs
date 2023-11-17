@@ -34,8 +34,23 @@ namespace Mission2AN
             lpa = monManager.chargementPortArriveeBD();
 
             affiche();
+            afficheL();
+            afficheS();
         }
+        public void afficheL()
+        {
+            listBoxLiaisons.DataSource = null;
+            listBoxLiaisons.DataSource = ll;
+            listBoxLiaisons.DisplayMember = "Description2";
+        }
+        public void afficheS()
+        {
 
+            listBoxSecteurs.DataSource = null;
+            listBoxSecteurs.DataSource = ls;
+            listBoxSecteurs.DisplayMember = "Description";
+
+        }
         public void affiche()
 
         {
@@ -45,13 +60,6 @@ namespace Mission2AN
             {
 
 
-                listBoxSecteurs.DataSource = null;
-                listBoxSecteurs.DataSource = ls;
-                listBoxSecteurs.DisplayMember = "Description";
-
-                listBoxLiaisons.DataSource = null;
-                listBoxLiaisons.DataSource = ll;
-                listBoxLiaisons.DisplayMember = "Description2";
 
                 comboBoxPort1.DataSource = null;
                 comboBoxPort1.DataSource = lpa;
@@ -101,10 +109,10 @@ namespace Mission2AN
 
                 monManager.updateLiaison(emp);
 
-                ll = monManager.chargementLiaBD();
+                // ll = monManager.chargementLiaBD();
 
 
-                affiche();
+                afficheL();
 
             }
 
@@ -136,7 +144,7 @@ namespace Mission2AN
 
                 ll = monManager.chargementLiaBD();
 
-                affiche();
+                afficheS();
 
             }
 
@@ -149,17 +157,26 @@ namespace Mission2AN
 
         private void button1_Click(object sender, EventArgs e)
         {
-            secteur secteur = listBoxSecteurs.SelectedItem as secteur;
+            try
+            {
+                int idLiaison = Convert.ToInt32(tbLiai.Text);
+                int secteurId = Convert.ToInt32(tbSec.Text);
+                int portDepartId = Convert.ToInt32(comboBoxPort2.Text);
+                int portArriveId = Convert.ToInt32(comboBoxPort1.Text);
+                string duree = tbAddDuree.Text;
 
-            // initier les valeur pour la creation de l'objet
-            string add_duree = tdAddDuree.Text;
-            port add_depart = comboBoxPort2.SelectedItem as port;
-            port add_arrivee = comboBoxPort1.SelectedItem as port;
+                secteur sec = (secteur)listBoxSecteurs.SelectedItem;
+                liaison l = new liaison(idLiaison, secteurId, portArriveId, portDepartId, TimeSpan.Parse(duree));
+                monManager.ajoutLiaison(l);
+                ll = monManager.chargementLiaisonSecteur(sec);
+                afficheLiaisonSecteur();
 
-            liaisonDAO.ajoutLiaison(add_duree, add_depart.Id, add_arrivee.Id, secteur.Id);
 
-            listBoxLiaisons.DataSource = null;
-            listBoxLiaisons.DataSource = liaisonDAO.GetLiaison(secteur.Id);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
         public void afficheLiaisonSecteur()
         {
@@ -177,14 +194,24 @@ namespace Mission2AN
 
         private void listBoxSecteurs_SelectedIndexChanged(object sender, EventArgs e)
         {
+
             secteur sec = (secteur)listBoxSecteurs.SelectedItem;
+            if(sec != null)
+            {
             ll = monManager.chargementLiaisonSecteur(sec);
             afficheLiaisonSecteur();
+
+            }
 
 
         }
 
         private void tbDuree_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxLiaisons_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

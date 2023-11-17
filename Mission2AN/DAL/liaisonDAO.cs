@@ -171,11 +171,9 @@ namespace Mission2AN.DAL
             {
 
                 maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
-
-
                 maConnexionSql.openConnection();
-
-                com = maConnexionSql.reqExec("Select * from liaison where secteur_id=" + sectli.Id);
+                string requete = "Select * from liaison where secteur_id=" + sectli.Id;
+                com = maConnexionSql.reqExec(requete);
 
 
 
@@ -238,9 +236,9 @@ namespace Mission2AN.DAL
                 // on ouvre la connexion a la bdd
                 maConnexionSql.openConnection();
 
-                // on fait notre requete pour modifier la durée de la liaisons avec l'id du liaions 
-                com = maConnexionSql.reqExec("insert into liaison(duree,portDepartId,portArriveeId) values( '" + e.Duree + "','" + e.PortDepartId + "','" + e.PortArriveeId + "' '" + e.SecteurId + "');");
-                // execution de la requete por les deletes et les modifs
+                // requete ajout
+                com = maConnexionSql.reqExec("insert into liaison values('" + e.IdLiaison + "', '" + e.SecteurId + "' " + e.PortArriveeId + "' , '" + e.PortDepartId + "' , '" + e.Duree + "')");
+                // execution de la requete 
                 int i = com.ExecuteNonQuery();
 
                 // fermeture de la connexion

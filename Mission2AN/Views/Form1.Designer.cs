@@ -41,12 +41,14 @@
             label6 = new Label();
             label7 = new Label();
             tbDuree = new TextBox();
-            tdAddDuree = new TextBox();
+            tbAddDuree = new TextBox();
             label8 = new Label();
             label9 = new Label();
             comboBoxPort1 = new ComboBox();
             comboBoxPort2 = new ComboBox();
             label10 = new Label();
+            tbSec = new TextBox();
+            tbLiai = new TextBox();
             SuspendLayout();
             // 
             // listBoxSecteurs
@@ -67,6 +69,7 @@
             listBoxLiaisons.Name = "listBoxLiaisons";
             listBoxLiaisons.Size = new Size(220, 94);
             listBoxLiaisons.TabIndex = 1;
+            listBoxLiaisons.SelectedIndexChanged += listBoxLiaisons_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -173,12 +176,12 @@
             tbDuree.TabIndex = 22;
             tbDuree.TextChanged += tbDuree_TextChanged;
             // 
-            // tdAddDuree
+            // tbAddDuree
             // 
-            tdAddDuree.Location = new Point(175, 373);
-            tdAddDuree.Name = "tdAddDuree";
-            tdAddDuree.Size = new Size(100, 23);
-            tdAddDuree.TabIndex = 23;
+            tbAddDuree.Location = new Point(175, 373);
+            tbAddDuree.Name = "tbAddDuree";
+            tbAddDuree.Size = new Size(100, 23);
+            tbAddDuree.TabIndex = 23;
             // 
             // label8
             // 
@@ -226,17 +229,33 @@
             label10.TabIndex = 28;
             label10.Text = "SICILYLINES";
             // 
+            // tbSec
+            // 
+            tbSec.Location = new Point(47, 264);
+            tbSec.Name = "tbSec";
+            tbSec.Size = new Size(100, 23);
+            tbSec.TabIndex = 29;
+            // 
+            // tbLiai
+            // 
+            tbLiai.Location = new Point(47, 319);
+            tbLiai.Name = "tbLiai";
+            tbLiai.Size = new Size(100, 23);
+            tbLiai.TabIndex = 30;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
+            Controls.Add(tbLiai);
+            Controls.Add(tbSec);
             Controls.Add(label10);
             Controls.Add(comboBoxPort2);
             Controls.Add(comboBoxPort1);
             Controls.Add(label9);
             Controls.Add(label8);
-            Controls.Add(tdAddDuree);
+            Controls.Add(tbAddDuree);
             Controls.Add(tbDuree);
             Controls.Add(label7);
             Controls.Add(label6);
@@ -272,11 +291,13 @@
         private Label label6;
         private Label label7;
         private TextBox tbDuree;
-        private TextBox tdAddDuree;
+        private TextBox tbAddDuree;
         private Label label8;
         private Label label9;
         private ComboBox comboBoxPort1;
         private ComboBox comboBoxPort2;
         private Label label10;
+        private TextBox tbSec;
+        private TextBox tbLiai;
     }
 }

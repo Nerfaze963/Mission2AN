@@ -159,14 +159,13 @@ namespace Mission2AN
         {
             try
             {
-                int idLiaison = Convert.ToInt32(tbLiai.Text);
-                int secteurId = Convert.ToInt32(tbSec.Text);
-                int portDepartId = Convert.ToInt32(comboBoxPort2.Text);
-                int portArriveId = Convert.ToInt32(comboBoxPort1.Text);
+
+                int portDepartId = ((port)comboBoxPort1.SelectedItem).Id;
+                int portArriveId = ((port)comboBoxPort2.SelectedItem).Id;
                 string duree = tbAddDuree.Text;
 
                 secteur sec = (secteur)listBoxSecteurs.SelectedItem;
-                liaison l = new liaison(idLiaison, secteurId, portArriveId, portDepartId, TimeSpan.Parse(duree));
+                liaison l = new liaison(15, sec.Id, portArriveId, portDepartId, TimeSpan.Parse(duree));
                 monManager.ajoutLiaison(l);
                 ll = monManager.chargementLiaisonSecteur(sec);
                 afficheLiaisonSecteur();
@@ -196,10 +195,10 @@ namespace Mission2AN
         {
 
             secteur sec = (secteur)listBoxSecteurs.SelectedItem;
-            if(sec != null)
+            if (sec != null)
             {
-            ll = monManager.chargementLiaisonSecteur(sec);
-            afficheLiaisonSecteur();
+                ll = monManager.chargementLiaisonSecteur(sec);
+                afficheLiaisonSecteur();
 
             }
 

@@ -22,7 +22,7 @@ namespace Mission2AN.Models
 
         public string affichePort
         {
-            get => this.nom;
+            get => "(id: "+this.id+") "+this.nom;
         }
 
         public override string ToString()

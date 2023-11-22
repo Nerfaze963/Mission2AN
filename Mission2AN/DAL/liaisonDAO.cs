@@ -237,7 +237,9 @@ namespace Mission2AN.DAL
                 maConnexionSql.openConnection();
 
                 // requete ajout
-                com = maConnexionSql.reqExec("insert into liaison values('" + e.IdLiaison + "', '" + e.SecteurId + "' " + e.PortArriveeId + "' , '" + e.PortDepartId + "' , '" + e.Duree + "')");
+
+                com = maConnexionSql.reqExec($"INSERT INTO `liaison`( `SECTEUR_ID`, `PORT_DEPART_ID`, `PORT_ARRIVE_ID`, `DUREE`) VALUES ('{e.SecteurId}','{e.PortArriveeId}','{e.PortDepartId}','{e.Duree}')");
+               
                 // execution de la requete 
                 int i = com.ExecuteNonQuery();
 

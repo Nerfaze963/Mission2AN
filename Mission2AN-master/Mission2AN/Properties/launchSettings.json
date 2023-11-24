@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Mission2AN": {
+      "commandName": "Project",
+      "workingDirectory": "C:\\Users\\arondeau\\Desktop\\Mission2AN-master\\Mission2AN\\bin\\Debug\\net6.0-windows"
+    }
+  }
+}

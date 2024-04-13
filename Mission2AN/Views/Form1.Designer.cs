@@ -65,7 +65,7 @@
             listBoxLiaisons.ItemHeight = 15;
             listBoxLiaisons.Location = new Point(441, 81);
             listBoxLiaisons.Name = "listBoxLiaisons";
-            listBoxLiaisons.Size = new Size(220, 94);
+            listBoxLiaisons.Size = new Size(326, 94);
             listBoxLiaisons.TabIndex = 1;
             listBoxLiaisons.SelectedIndexChanged += listBoxLiaisons_SelectedIndexChanged;
             // 
@@ -195,7 +195,7 @@
             // 
             label9.AutoSize = true;
             label9.Font = new Font("Arial", 11.25F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point);
-            label9.Location = new Point(466, 50);
+            label9.Location = new Point(543, 52);
             label9.Name = "label9";
             label9.Size = new Size(100, 17);
             label9.TabIndex = 25;
